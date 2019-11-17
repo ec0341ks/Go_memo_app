@@ -13,6 +13,7 @@ import (
 	csrf "github.com/gobuffalo/mw-csrf"
 	i18n "github.com/gobuffalo/mw-i18n"
 	"github.com/gobuffalo/packr/v2"
+
 )
 
 // ENV is used to help switch settings based on where the
@@ -60,7 +61,7 @@ func App() *buffalo.App {
 		app.Use(translations())
 
 		app.GET("/", HomeHandler)
-		app.GET("/yui", YuiHandler)
+		app.GET("/boards/new", BoardsShow)
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}
 

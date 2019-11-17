@@ -4,6 +4,9 @@ import (
 	"log"
 
 	"coke/actions"
+
+	// "database/sql"
+	// _ "github.com/go-sql-driver/mysql"
 )
 
 // main is the starting point for your Buffalo application.
@@ -14,11 +17,13 @@ import (
 // application that is. :)
 func main() {
 	app := actions.App()
+	// db, err := sql.Open("mysql", "root@/coke_development")
 	if err := app.Serve(); err != nil {
+	// if err != nil {	
 		log.Fatal(err)
 	}
+	// defer db.Close()
 }
-
 /*
 # Notes about `main.go`
 

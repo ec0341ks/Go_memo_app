@@ -2,8 +2,8 @@ package actions
 
 import "github.com/gobuffalo/buffalo"
 
-// BoardsShow default implementation.
-func BoardsShow(c buffalo.Context) error {
-	return c.Render(200, r.HTML("boards/show.html"))
+// BoardsNew default implementation.
+func BoardsNew(c buffalo.Context) error {
+	return c.Render(200, r.HTML("boards/new.html"))
 }
 

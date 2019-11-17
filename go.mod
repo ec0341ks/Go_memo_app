@@ -3,6 +3,7 @@ module coke
 go 1.13
 
 require (
+	github.com/go-sql-driver/mysql v1.4.1
 	github.com/gobuffalo/buffalo v0.15.0
 	github.com/gobuffalo/buffalo-pop v1.23.1
 	github.com/gobuffalo/envy v1.7.1
@@ -15,4 +16,5 @@ require (
 	github.com/gobuffalo/suite v2.8.2+incompatible
 	github.com/markbates/grift v1.1.0
 	github.com/unrolled/secure v0.0.0-20190103195806-76e6d4e9b90c
+	google.golang.org/appengine v1.6.5 // indirect
 )

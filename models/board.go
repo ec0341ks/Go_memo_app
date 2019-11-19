@@ -4,14 +4,13 @@ import (
 	"encoding/json"
 	"github.com/gobuffalo/pop"
 	"github.com/gobuffalo/validate"
-	"github.com/gofrs/uuid"
 	"time"
 )
 type Board struct {
 	Name string `json:"name" db:"name"`
 	Title string `json:"title" db:"title"`
 	Body string `json:"body" db:"body"`
-	ID uuid.UUID `json:"id" db:"id"`
+	ID int `json:"id" db:"id"`
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }

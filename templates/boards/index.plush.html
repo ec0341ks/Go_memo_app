@@ -15,15 +15,14 @@
     </tr>
   </thead>
   <tbody>
+    <%= for (i, board) in (boards) { %>
     <tr>
-      <%= for (board) in boards { %>
-      <th><%= board.ID %></th>
+      <th><%= i+1 %></th>
       <th><%= board.Title %></th>
       <th><%= board.Name %></th>
       <th><%= board.CreatedAt %></th>
       <th><%= board.UpdatedAt %></th>
-      <% } %>
     </tr>
+    <% } %>
   </tbody>
-  </thead>
 </table>

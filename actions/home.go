@@ -22,6 +22,12 @@ func HomeHandler(c buffalo.Context) error {
 	fmt.Println("here!!!!!!!!!!!!!!!!")
 	fmt.Println(err)
 	c.Set("boards",boards)
+	fmt.Println(boards) 
+	
+	// for i := 1, i<=boards.length; i++ {
+	// 	fmt.Println(i)
+	// }
+
 	// err := board.All(&boards)
 	return c.Render(200, r.HTML("boards/index.html"))
 }

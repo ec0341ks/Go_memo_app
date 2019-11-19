@@ -2,6 +2,7 @@ package models
 
 import (
 	"log"
+
 	"github.com/gobuffalo/envy"
 	"github.com/gobuffalo/pop"
 )

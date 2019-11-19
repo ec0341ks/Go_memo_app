@@ -13,7 +13,6 @@ import (
 	csrf "github.com/gobuffalo/mw-csrf"
 	i18n "github.com/gobuffalo/mw-i18n"
 	"github.com/gobuffalo/packr/v2"
-
 )
 
 // ENV is used to help switch settings based on where the

@@ -2,19 +2,20 @@ package models
 
 import (
 	"encoding/json"
+	"time"
+
 	"github.com/gobuffalo/pop"
 	"github.com/gobuffalo/validate"
-	"time"
 )
+
 type Board struct {
-	Name string `json:"name" db:"name"`
-	Title string `json:"title" db:"title"`
-	Body string `json:"body" db:"body"`
-	ID int `json:"id" db:"id"`
+	Name      string    `json:"name" db:"name"`
+	Title     string    `json:"title" db:"title"`
+	Body      string    `json:"body" db:"body"`
+	ID        int       `json:"id" db:"id"`
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
-
 
 // String is not required by pop and may be deleted
 func (b Board) String() string {

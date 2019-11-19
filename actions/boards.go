@@ -1,17 +1,18 @@
 package actions
 
 import (
-	"github.com/gobuffalo/buffalo"
 	"coke/models"
+
+	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop"
 	"github.com/pkg/errors"
-	// "database/sql" 
+	// "database/sql"
 )
 
 // BoardsNew default implementation.
 func BoardsNew(c buffalo.Context) error {
 	board := &models.Board{}
-	c.Set("board",board)
+	c.Set("board", board)
 	return c.Render(200, r.HTML("boards/new.html"))
 }
 
@@ -39,7 +40,6 @@ func BoardsCreate(c buffalo.Context) error {
 	if err != nil {
 		return errors.WithStack(err)
 	}
-
 
 	if verrs.HasAny() {
 		// Make the errors available inside the html template

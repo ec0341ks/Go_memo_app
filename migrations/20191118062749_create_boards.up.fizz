@@ -2,6 +2,6 @@ create_table("boards") {
 	t.Column("Name", "string", {})
 	t.Column("Title", "string", {})
 	t.Column("Body", "text", {})
-	t.Column("id", "uuid", {primary: true})
+	t.Column("id", "int", {primary: true, auto_increment: true})
 	t.Timestamps()
 }

@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `boards`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `boards` (
-  `id` char(36) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) NOT NULL,
   `Title` varchar(255) NOT NULL,
   `Body` text NOT NULL,
@@ -55,4 +55,4 @@ CREATE TABLE `schema_migration` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-19  9:58:21
+-- Dump completed on 2019-11-19 15:29:53

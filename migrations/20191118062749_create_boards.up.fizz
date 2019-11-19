@@ -1,7 +1,7 @@
 create_table("boards") {
-	t.Column("name", "string", {})
-	t.Column("title", "string", {})
-	t.Column("body", "text", {})
+	t.Column("Name", "string", {})
+	t.Column("Title", "string", {})
+	t.Column("Body", "text", {})
 	t.Column("id", "uuid", {primary: true})
 	t.Timestamps()
 }

@@ -4,3 +4,17 @@
     <a href='/' class="btn btn-outline-dark">掲示板一覧</a>
   </div>
 </div>
+<%= form_for(board, {action: boardsPath(), method: "POST"}) { %>
+<div class="row">
+  <div class="col-md-6">
+    <%= f.InputTag("Name") %>
+  </div>
+  <div class="col-md-12">
+    <%= f.InputTag("Title") %>
+  </div>
+  <div class="col-md-12">
+    <%= f.TextArea("Body", {rows: 10}) %>
+  </div>
+  <button class="btn btn-success" role="submit">Save</button>
+</div>
+<% } %>

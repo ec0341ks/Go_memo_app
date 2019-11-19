@@ -15,9 +15,9 @@
     </tr>
   </thead>
   <tbody>
-    <%= for (i, board) in (boards) { %>
+    <%= for (board) in (boards) { %>
     <tr>
-      <th><%= i+1 %></th>
+      <th><%= board.ID %></th>
       <th><%= board.Title %></th>
       <th><%= board.Name %></th>
       <th><%= board.CreatedAt %></th>

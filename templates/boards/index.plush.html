@@ -16,18 +16,14 @@
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>雑談掲示板</td>
-      <td>あああ</td>
-      <td>2018年4月1日</td>
-      <td>2018年4月15日</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>雑談掲示板2</td>
-      <td>Ken</td>
-      <td>2018年4月1日</td>
-      <td>2018年4月15日</td>
+      <%= for (board) in boards { %>
+      <th><%= board.ID %></th>
+      <th><%= board.Title %></th>
+      <th><%= board.Name %></th>
+      <th><%= board.CreatedAt %></th>
+      <th><%= board.UpdatedAt %></th>
+      <% } %>
     </tr>
   </tbody>
+  </thead>
 </table>

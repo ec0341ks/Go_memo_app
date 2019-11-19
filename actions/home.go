@@ -1,10 +1,27 @@
 package actions
 
-import "github.com/gobuffalo/buffalo"
+import (
+	"fmt"
+
+	"github.com/gobuffalo/buffalo"
+	"coke/models"
+	"github.com/gobuffalo/pop"
+	// "github.com/pkg/errors"
+)
 
 // HomeHandler is a default handler to serve up
 // a home page.
 func HomeHandler(c buffalo.Context) error {
-	c.Set("name","yui")
+	tx := c.Value("tx").(*pop.Connection)
+	// if !ok {
+	// 	return errors.WithStack(errors.New("no transaction found"))
+	// }
+	boards := []models.Board{}
+	err := tx.All(&boards)
+	fmt.Println(boards)
+	fmt.Println("here!!!!!!!!!!!!!!!!")
+	fmt.Println(err)
+	c.Set("boards",boards)
+	// err := board.All(&boards)
 	return c.Render(200, r.HTML("boards/index.html"))
 }

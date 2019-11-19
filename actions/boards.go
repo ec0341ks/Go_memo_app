@@ -5,6 +5,7 @@ import (
 	"coke/models"
 	"github.com/gobuffalo/pop"
 	"github.com/pkg/errors"
+	// "database/sql" 
 )
 
 // BoardsNew default implementation.
@@ -13,6 +14,11 @@ func BoardsNew(c buffalo.Context) error {
 	c.Set("board",board)
 	return c.Render(200, r.HTML("boards/new.html"))
 }
+
+// func BoardShow(){
+// 	db := sql.Open("mysql")
+// 	log.Println("Connected to mysql.")
+// }
 
 func BoardsCreate(c buffalo.Context) error {
 	// Allocate an empty Widget

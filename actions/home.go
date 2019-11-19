@@ -3,8 +3,9 @@ package actions
 import (
 	"fmt"
 
-	"github.com/gobuffalo/buffalo"
 	"coke/models"
+
+	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop"
 	// "github.com/pkg/errors"
 )
@@ -21,9 +22,9 @@ func HomeHandler(c buffalo.Context) error {
 	fmt.Println(boards)
 	fmt.Println("here!!!!!!!!!!!!!!!!")
 	fmt.Println(err)
-	c.Set("boards",boards)
-	fmt.Println(boards) 
-	
+	c.Set("boards", boards)
+	fmt.Println(boards)
+
 	// for i := 1, i<=boards.length; i++ {
 	// 	fmt.Println(i)
 	// }

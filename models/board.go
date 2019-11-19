@@ -8,13 +8,14 @@ import (
 	"time"
 )
 type Board struct {
-		name				string	`db:"name"`
-		title				string	`db:"title`
-		body				string	`db:"body`
-    ID uuid.UUID `json:"id" db:"id"`
-    CreatedAt time.Time `json:"created_at" db:"created_at"`
-    UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
+	Name string `json:"name" db:"name"`
+	Title string `json:"title" db:"title"`
+	Body string `json:"body" db:"body"`
+	ID uuid.UUID `json:"id" db:"id"`
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
+
 
 // String is not required by pop and may be deleted
 func (b Board) String() string {

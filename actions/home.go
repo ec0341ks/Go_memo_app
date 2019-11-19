@@ -6,5 +6,5 @@ import "github.com/gobuffalo/buffalo"
 // a home page.
 func HomeHandler(c buffalo.Context) error {
 	c.Set("name","yui")
-	return c.Render(200, r.HTML("index.html"))
+	return c.Render(200, r.HTML("boards/index.html"))
 }

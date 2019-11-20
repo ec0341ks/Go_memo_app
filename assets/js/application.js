@@ -3,7 +3,7 @@ require("bootstrap/dist/js/bootstrap.bundle.js");
 
 
 
-$('.profile').on('click', function () {
-  $(this).remove();
+$('.delete-button').on('click', function () {
+  $(this).parent().remove();
   console.log("発火！")
 })

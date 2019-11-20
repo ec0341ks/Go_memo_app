@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center">
-  <h1>掲示板作成</h1>
+  <h1>List作成</h1>
   <div class="ml-auto boards__linkBox">
     <a href='/' class="btn btn-outline-dark">掲示板一覧</a>
   </div>
@@ -10,10 +10,10 @@
     <%= f.InputTag("Name") %>
   </div>
   <div class="col-md-12">
-    <%= f.InputTag("Title") %>
+    <%= f.InputTag("Task") %>
   </div>
   <div class="col-md-12">
-    <%= f.TextArea("Body", {rows: 10}) %>
+    <%= f.TextArea("Memo", {rows: 10}) %>
   </div>
   <button class="btn btn-success" role="submit">Save</button>
 </div>

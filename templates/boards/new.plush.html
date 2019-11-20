@@ -7,10 +7,10 @@
 <%= form_for(board, {action: boardsPath(), method: "POST"}) { %>
 <div class="row">
   <div class="col-md-6">
-    <%= f.InputTag("Name") %>
+    <%= f.InputTag("FamilyName") %>
   </div>
   <div class="col-md-12">
-    <%= f.InputTag("Task") %>
+    <%= f.InputTag("FirstName") %>
   </div>
   <div class="col-md-12">
     <%= f.TextArea("Memo", {rows: 10}) %>

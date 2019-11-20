@@ -1,5 +1,5 @@
 <div class="d-flex align-items-center">
-  <h1>タスク一覧</h1>
+  <h1>名前一覧</h1>
   <div class="ml-auto boards__linkBox">
     <a href='/boards/new' class="btn btn-outline-dark">新規作成</a>
   </div>
@@ -8,20 +8,16 @@
   <thead class="thead-dark">
     <tr id="memo">
       <th>ID</th>
-      <th>Task</th>
-      <th>Name</th>
-      <th>作成日時</th>
-      <th>更新日時</th>
+      <th>Family Name</th>
+      <th>First Name</th>
     </tr>
   </thead>
   <tbody>
     <%= for (board) in (boards) { %>
     <tr>
       <th><%= board.ID %></th>
-      <th><%= board.Task %></th>
-      <th><%= board.Name %></th>
-      <th><%= board.CreatedAt %></th>
-      <th><%= board.UpdatedAt %></th>
+      <th><%= board.FamilyName %></th>
+      <th><%= board.FirstName %></th>
     </tr>
     <% } %>
   </tbody>

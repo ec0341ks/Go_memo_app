@@ -9,10 +9,10 @@ import (
 )
 
 type Board struct {
-	Name     string    `json:"name" db:"name"`
-	Task     string    `json:"title" db:"title"`
-	Memo     string    `json:"body" db:"body"`
-	ID       int       `json:"id" db:"id"`
+	ID          int       `json:"id" db:"id"`
+	FamilyName  string    `json:"name" db:"name"`
+	FirstName   string    `json:"title" db:"title"`
+	Memo     		string    `json:"body" db:"body"`
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }

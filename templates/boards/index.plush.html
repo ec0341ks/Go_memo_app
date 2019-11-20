@@ -7,17 +7,17 @@
 <table class="table table-hover boards__table">
   <thead class="thead-dark">
     <tr id="memo">
-      <th>ID</th>
-      <th>Family Name</th>
-      <th>First Name</th>
+      <th id="id">ID</th>
+      <th id="family">Family Name</th>
+      <th id="first">First Name</th>
     </tr>
   </thead>
   <tbody>
     <%= for (board) in (boards) { %>
-    <tr>
-      <th><%= board.ID %></th>
-      <th><%= board.FamilyName %></th>
-      <th><%= board.FirstName %></th>
+    <tr class="profile">
+      <th class='number'><%= board.ID %></th>
+      <th class='family'><%= board.FamilyName %></th>
+      <th class='first'><%= board.FirstName %></th>
     </tr>
     <% } %>
   </tbody>

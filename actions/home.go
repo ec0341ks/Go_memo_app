@@ -2,7 +2,9 @@ package actions
 
 import (
 	"fmt"
+
 	"coke/models"
+
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop"
 	// "github.com/pkg/errors"
@@ -26,6 +28,7 @@ func HomeHandler(c buffalo.Context) error {
 	// for i := 1, i<=boards.length; i++ {
 	// 	fmt.Println(i)
 	// }
+
 	// err := board.All(&boards)
 	return c.Render(200, r.HTML("boards/index.html"))
 }

@@ -61,6 +61,7 @@ func App() *buffalo.App {
 		app.GET("/", HomeHandler)
 		app.GET("/boards/new", BoardsNew)
 		app.POST("/boards", BoardsCreate)
+		app.DELETE("/names/delete", NamesDelete)
 		app.ServeFiles("/", assetsBox) // serve files from the public directory
 	}
 

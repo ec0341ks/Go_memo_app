@@ -8,3 +8,8 @@ func (as *ActionSuite) Test_Boards_Delete() {
 	as.Fail("Not Implemented!")
 }
 
+
+func (as *ActionSuite) Test_Boards_Update() {
+	as.Fail("Not Implemented!")
+}
+

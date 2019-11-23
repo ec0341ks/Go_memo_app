@@ -60,7 +60,6 @@ func BoardsCreate(c buffalo.Context) error {
 // BoardsDelete default implementation.
 func BoardsDelete(c buffalo.Context) error {
 	tx := c.Value("tx").(*pop.Connection)
-	fmt.Println("ここだよ")
 	fmt.Println(c.Params())
 	id := c.Params().Get("id")
 	fmt.Println(id)
@@ -71,3 +70,46 @@ func BoardsDelete(c buffalo.Context) error {
 	// return c.Render(200, r.HTML("boards/delete.html"))
 }
 
+
+// BoardsUpdate default implementation.
+func BoardsEdit(c buffalo.Context) error {
+	fmt.Println("ここだよ")
+	tx := c.Value("tx").(*pop.Connection)
+	board := &models.Board{}
+	id := c.Params().Get("id")
+	err := tx.Find(board, id)
+	fmt.Println(err)
+	// err := tx.Update(board)
+	c.Set("board", board)
+	return c.Render(200, r.HTML("boards/edit.html"))
+}
+
+func BoardsUpdate(c buffalo.Context) error {
+	fmt.Println("ぴよぴよ")
+	tx := c.Value("tx").(*pop.Connection)
+	board := &models.Board{}
+	fmt.Println(board)
+	if err := tx.Find(board, c.Param("id")); err != nil {
+		return c.Error(404, err)
+	}
+	fmt.Println(board)
+	// Bind Widget to the html form elements
+	if err := c.Bind(board); err != nil {
+			return errors.WithStack(err)
+	}
+	fmt.Println(board)
+	verrs, err := tx.ValidateAndUpdate(board)
+	if err != nil {
+			return errors.WithStack(err)
+	}
+	if verrs.HasAny() {
+		// Make the errors available inside the html template
+		c.Set("errors", verrs)
+
+		// Render again the edit.html template that the user can
+		// correct the input.
+		return c.Render(422, r.Auto(c, board))
+}
+	c.Flash().Add("success", "Widget was updated successfully")
+	return c.Redirect(303, "/")
+}

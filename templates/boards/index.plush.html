@@ -20,8 +20,9 @@
       <th class='family'><%= board.FamilyName %></th>
       <th class='first'><%= board.FirstName %></th>
       <th>
+        <%= form({action: boardPath({id: board.ID}), method: "GET"}) { %>
         <button class="btn btn-success btn-sm edit-button">Edit</button>
-
+        <% } %>
         <%= form({action: boardPath({id: board.ID}), method: "DELETE"}) { %>
         <button class="btn btn-danger btn-sm delete-button">Delete</button>
         <% } %>

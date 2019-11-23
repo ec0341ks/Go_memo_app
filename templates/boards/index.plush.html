@@ -19,8 +19,14 @@
       <th class='number'><%= board.ID %></th>
       <th class='family'><%= board.FamilyName %></th>
       <th class='first'><%= board.FirstName %></th>
-      <th button class="btn btn-success btn-sm edit-button">Edit</button>
-      <th button class="btn btn-danger btn-sm delete-button">Delete</button>
+      <th>
+        <button class="btn btn-success btn-sm edit-button">Edit</button>
+
+        <%= form({action: boardPath({id: board.ID}), method: "DELETE"}) { %>
+        <button class="btn btn-danger btn-sm delete-button">Delete</button>
+        <% } %>
+        <!-- <a href='/boards/delete/' data-method="delete" class="btn btn-danger btn-sm delete-button">Delete</a> -->
+      </th>
     </tr>
     <% } %>
   </tbody>

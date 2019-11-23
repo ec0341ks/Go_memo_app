@@ -1,8 +1,8 @@
 package actions
 
 import (
+	"fmt"
 	"coke/models"
-
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop"
 	"github.com/pkg/errors"
@@ -56,3 +56,18 @@ func BoardsCreate(c buffalo.Context) error {
 	// return c.Render(201, r.Auto(c, board))
 	return c.Redirect(303, "/")
 }
+
+// BoardsDelete default implementation.
+func BoardsDelete(c buffalo.Context) error {
+	tx := c.Value("tx").(*pop.Connection)
+	fmt.Println("ここだよ")
+	fmt.Println(c.Params())
+	id := c.Params().Get("id")
+	fmt.Println(id)
+	err := tx.RawQuery("DELETE FROM boards WHERE id = ?", id).Exec()
+	fmt.Println(err)
+	// fmt.Println(boards[0])
+	return c.Redirect(303, "/")
+	// return c.Render(200, r.HTML("boards/delete.html"))
+}
+

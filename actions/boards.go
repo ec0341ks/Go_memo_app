@@ -110,6 +110,6 @@ func BoardsUpdate(c buffalo.Context) error {
 		// correct the input.
 		return c.Render(422, r.Auto(c, board))
 }
-	c.Flash().Add("success", "Widget was updated successfully")
+	c.Flash().Add("success", "データが修正されました")
 	return c.Redirect(303, "/")
 }

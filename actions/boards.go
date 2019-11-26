@@ -51,7 +51,7 @@ func BoardsCreate(c buffalo.Context) error {
 		return c.Redirect(307, "/")
 	}
 	// If there are no errors set a success message
-	c.Flash().Add("success", "新しい掲示板が作成されました")
+	c.Flash().Add("success", "新しい名簿が作成されました")
 	// and redirect to the widgets index page
 	// return c.Render(201, r.Auto(c, board))
 	return c.Redirect(303, "/")

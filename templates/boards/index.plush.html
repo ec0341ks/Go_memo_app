@@ -7,7 +7,7 @@
 <table class="table table-hover boards__table table-striped">
   <thead class="thead-dark">
     <tr id="memo">
-      <th id="id">ID</th>
+      <th id="id" style='display:none;'>ID</th>
       <th id="family">Family Name</th>
       <th id="first">First Name</th>
       <th id="first">Button</th>
@@ -16,10 +16,10 @@
   <tbody>
     <%= for (board) in (boards) { %>
     <tr class="profile">
-      <th class='id'><%= board.ID %></th>
+      <th class='id' style='display:none;'><%= board.ID %></th>
       <th class='family'><%= board.FamilyName %></th>
       <th class='first'><%= board.FirstName %></th>
-      <th>
+      <th style="display: flex;">
         <%= form({action: boardPath({id: board.ID}), method: "GET"}) { %>
         <button class="btn btn-success btn-sm edit-button">Edit</button>
         <% } %>
